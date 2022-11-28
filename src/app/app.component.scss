@@ -10,6 +10,11 @@
 	@include media-breakpoint-down(md) {
 		flex-direction: column-reverse;
 	}
+
+	&--shrinked {
+		// width: 60%;
+		margin: 0 auto;
+	}
 }
 
 .profile-body {
