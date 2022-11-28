@@ -9,7 +9,7 @@ import { IdbService } from '@services/idb.service';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-	title = "Dartegnian's Portfolio";
+	title = "Dartegnian.com";
 	isBrowser: boolean = false;
 
 	constructor(
