@@ -2,7 +2,10 @@
 	<theme-switcher *ngIf="isBrowser"></theme-switcher>
 	<hero-banner></hero-banner>
 	<section class="profile-intro profile-intro--shrinked">
-		<profile-info></profile-info>
+		<div class="profile-intro__info-container">
+			<profile-info></profile-info>
+			<personal-stats></personal-stats>
+		</div>
 		<profile-card></profile-card>
 	</section>
 	<section class="profile-body profile-body--standalone">
