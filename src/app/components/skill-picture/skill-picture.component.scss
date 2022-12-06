@@ -17,9 +17,10 @@ $title-position: -5%;
 	}
 }
 
-.skill-picture {
+.mbti-characteristic {
 	position: relative;
 	display: flex;
+	flex-grow: 1;
 
 	&__title {
 		@include material-button;
@@ -77,5 +78,55 @@ $title-position: -5%;
 
 	&__since-date {
 		font-weight: bold;
+	}
+
+	&__characteristic {
+		display: grid;
+		grid-template-columns: 20% auto 20%;
+		grid-auto-flow: row;
+		gap: 2rem;
+		flex-grow: 1;
+	}
+
+	&__characteristics {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 2rem;
+	}
+
+	&__detail {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__bar {
+		@include material-basic--tertiary;
+		display: flex;
+		width: 100%;
+		// padding: 0.5rem;
+		border-radius: $container-border-radius;
+		overflow: hidden;
+		flex: 1 0 100%;
+		align-items: center;
+		// border-radius: $container-border-radius;
+
+		&--right {
+			justify-content: right;
+			flex-direction: row-reverse;
+		}
+	}
+
+	&__bar-filler {
+		@include material-colored--tertiary;
+		height: 100%;
+	}
+
+	&__icon {
+		@include material-inverted--tertiary;
+		padding: 1rem;
+		margin: 0 -2rem;
+		z-index: 1;
+		border-radius: $container-border-radius;
 	}
 }
