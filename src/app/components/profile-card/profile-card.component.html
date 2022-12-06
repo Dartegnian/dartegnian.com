@@ -24,15 +24,14 @@
 				></responsive-image>
 			</div>
 		</div>
+		<h1 class="profile-card__name">{{ name }}</h1>
 	</header>
 	<section class="profile-card__text">
-		<h1 class="profile-card__name">{{ name }}</h1>
-		<span class="profile-card__tagline">{{ tagline }}</span>
-		<a href="https://dartegnian.com" class="profile-card__contact" target="_blank">
-			<span class="material-symbols-rounded theme-swticher__toggle-icon">
-				edit
+		<span class="profile-card__tagline">
+			<span *ngFor="let adjective of adjectives" class="profile-card__adjective">
+				<span class="material-symbols-rounded profile-card__adjective-icon">{{ adjective.icon }}</span>
+				{{ adjective.name }}
 			</span>
-			Blog
-		</a>
+		</span>
 	</section>
 </article>

@@ -10,7 +10,24 @@ import { AccentService } from 'src/app/services/accent-service.service';
 })
 export class ProfileCardComponent implements OnInit {
 	name = "Dartegnian L. Velarde";
-	tagline = "Software engineer, web developer, Linux enthusiast, DevOps engineer";
+	adjectives: any[] = [
+		{
+			icon: "edit",
+			name: "Writer"
+		},
+		{
+			icon: "crisis_alert",
+			name: "Archer"
+		},
+		{
+			icon: "queue_music",
+			name: "Vocaloid fan"
+		},
+		{
+			icon: "terminal",
+			name: "DevOps engineer"
+		}
+	];
 
 	images: Array<string>;
 	coverImage: string;

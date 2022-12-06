@@ -1,9 +1,12 @@
 <main class="portfolio-body">
 	<theme-switcher *ngIf="isBrowser"></theme-switcher>
 	<hero-banner></hero-banner>
-	<section class="profile-intro">
+	<section class="profile-intro profile-intro--shrinked">
+		<div class="profile-intro__info-container">
+			<profile-info></profile-info>
+			<personal-stats></personal-stats>
+		</div>
 		<profile-card></profile-card>
-		<profile-info></profile-info>
 	</section>
 	<section class="profile-body profile-body--standalone">
 		<other-sites></other-sites>
