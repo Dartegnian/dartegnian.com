@@ -32,10 +32,28 @@ export class PersonalStatsComponent implements OnInit {
 			link: "https://en.wikipedia.org/wiki/Capricorn_(astrology)"
 		},
 	];
+	shuffledArray: any[];
 
-	constructor() { }
+	constructor() {
+		this.shuffledArray = this.shuffleArray(this.stats);
+	}
 
 	ngOnInit(): void {
 	}
 
+
+	shuffleArray(array: any[]) {
+		// Thank you, StackOverflow
+		// https://stackoverflow.com/questions/60787865/randomize-array-in-angular
+		let m = array.length, t, i;
+
+		while (m) {
+			i = Math.floor(Math.random() * m--);
+			t = array[m];
+			array[m] = array[i];
+			array[i] = t;
+		}
+
+		return array;
+	}
 }
