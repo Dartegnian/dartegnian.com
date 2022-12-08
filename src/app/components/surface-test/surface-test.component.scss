@@ -131,4 +131,17 @@
 		overflow: hidden;
 		border-radius: 2rem;
 	}
+
+	&__title-thumb {
+		@include theme-transition;
+		@include material-container--tertiary;
+		padding: 10px;
+		width: 48px;
+		height: 48px;
+		border-radius: 32px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 1rem;
+	}
 }

@@ -7,6 +7,9 @@
 			[class.surfaces__surface--wide]="wideSurfaces.includes(surface)"
 		>
 			<header class="surfaces__header">
+				<div class="surfaces__title-thumb material-symbols-rounded">
+					{{ surfaceContent[i].icon }}
+				</div>
 				<h2>{{ surfaceContent[i].heading }}</h2>
 				<p>{{ surfaceContent[i].subHeading }}</p>
 			</header>

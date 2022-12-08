@@ -33,70 +33,70 @@ export class SurfaceTestComponent implements OnInit {
 	surfaceContent = [
 		{
 			image: "toptrack",
-			icon: "",
-			heading: "\"No Celestial\" by Le Sserafim",
+			icon: "volume_up",
+			heading: "No Celestial by Le Sserafim",
 			subHeading: "Top track this month"
 		},
 
 		{
 			image: "",
-			icon: "",
+			icon: "graphic_eq",
 			heading: "Vocaloid",
 			subHeading: "Favorite genre at the moment"
 		},
 
 		{
 			image: "",
-			icon: "",
+			icon: "headphones",
 			heading: "Girls' Generation",
 			subHeading: "Favorite girl group"
 		},
 
 		{
 			image: "",
-			icon: "",
+			icon: "spatial_audio_off",
 			heading: "Owl City",
 			subHeading: "Favorite single artist"
 		},
 
 		{
 			image: "",
-			icon: "",
-			heading: "\"Girls & Peace\" by Girls' Generation",
+			icon: "library_music",
+			heading: "Girls & Peace by Girls' Generation",
 			subHeading: "Favorite album"
 		},
 
 		{
 			image: "",
-			icon: "",
+			icon: "radio",
 			heading: "Spotify",
 			subHeading: "Streaming platform"
 		},
 
 		{
 			image: "",
-			icon: "",
+			icon: "speaker_group",
 			heading: "Paramore",
 			subHeading: "Favorite band"
 		},
 
 		{
 			image: "luka",
-			icon: "",
+			icon: "discover_tune",
 			heading: "Luka Megurine",
 			subHeading: "Favorite Vocaloid"
 		},
 
 		{
 			image: "",
-			icon: "",
+			icon: "library_add",
 			heading: "IA/02 -COLOR-",
 			subHeading: "Favorite Vocaloid album"
 		},
 
 		{
 			image: "",
-			icon: "",
+			icon: "speed",
 			heading: "130+",
 			subHeading: "Preferred BPM"
 		},
