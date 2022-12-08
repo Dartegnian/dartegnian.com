@@ -32,7 +32,7 @@ export class SurfaceTestComponent implements OnInit {
 
 	surfaceContent = [
 		{
-			image: "",
+			image: "toptrack",
 			icon: "",
 			heading: "\"No Celestial\" by Le Sserafim",
 			subHeading: "Top track this month"
@@ -81,7 +81,7 @@ export class SurfaceTestComponent implements OnInit {
 		},
 
 		{
-			image: "",
+			image: "luka",
 			icon: "",
 			heading: "Luka Megurine",
 			subHeading: "Favorite Vocaloid"

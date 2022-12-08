@@ -10,6 +10,14 @@
 				<h2>{{ surfaceContent[i].heading }}</h2>
 				<p>{{ surfaceContent[i].subHeading }}</p>
 			</header>
+			<div class="surfaces__image-container">
+				<responsive-image
+					*ngIf="largeSurfaces.includes(surface)"
+					[imageName]="surfaceContent[i].image"
+					class="surface__image"
+					[imageAlt]="surfaceContent[i].image + ' image'"
+				></responsive-image>
+			</div>
 		</article>
 	</section>
 </div>
