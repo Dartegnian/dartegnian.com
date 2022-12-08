@@ -118,6 +118,10 @@ $title-position: -5%;
 		&--right {
 			align-items: end;
 		}
+
+		&--active {
+			font-weight: bold;
+		}
 	}
 
 	&__detail-mobile {

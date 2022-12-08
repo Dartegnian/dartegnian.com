@@ -36,7 +36,7 @@
 </ng-template>
 
 <ng-template #leftCharacteristic let-char="char">
-	<div class="mbti-characteristic__detail">
+	<div class="mbti-characteristic__detail" [class.mbti-characteristic__detail--active]="char.direction === 'left'">
 		<span>
 			{{
 					char.direction === "left"
@@ -48,7 +48,7 @@
 </ng-template>
 
 <ng-template #rightCharacteristic let-char="char">
-	<div class="mbti-characteristic__detail mbti-characteristic__detail--right">
+	<div class="mbti-characteristic__detail mbti-characteristic__detail--right" [class.mbti-characteristic__detail--active]="char.direction === 'right'">
 		<span>
 			{{
 				char.direction === "right"
