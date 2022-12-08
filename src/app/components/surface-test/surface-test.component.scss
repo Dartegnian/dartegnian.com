@@ -39,12 +39,11 @@
 
 		&--material-colored-primary {
 			@include material-colored--primary;
-			grid-column: span 2;
-			grid-row: span 2;
 		}
 
 		&--material-basic-primary {
 			@include material-basic--primary;
+			@include material-outline;
 		}
 
 		&--material-container-primary {
@@ -53,14 +52,18 @@
 
 		&--material-inverted-primary {
 			@include material-inverted--primary;
+			grid-column: span 2;
 		}
 
 		&--material-colored-secondary {
 			@include material-colored--secondary;
+			grid-column: span 2;
+			grid-row: span 2;
 		}
 
 		&--material-basic-secondary {
 			@include material-basic--secondary;
+			@include material-outline;
 		}
 
 		&--material-container-secondary {
@@ -69,6 +72,7 @@
 
 		&--material-inverted-secondary {
 			@include material-inverted--secondary;
+			grid-column: span 2;
 		}
 
 		&--material-colored-tertiary {
@@ -77,10 +81,12 @@
 
 		&--material-basic-tertiary {
 			@include material-basic--tertiary;
+			@include material-outline;
 		}
 
 		&--material-container-tertiary {
 			@include material-container--tertiary;
+			grid-row: span 2;
 		}
 
 		&--material-inverted-tertiary {

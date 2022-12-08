@@ -7,28 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurfaceTestComponent implements OnInit {
 	surfaces: Array<String> = [
-		"material-colored-primary",
-		"material-basic-primary",
+		"material-colored-secondary",
 		"material-container-primary",
+		"material-container-secondary",
 		"material-inverted-primary",
 
-		"material-colored-secondary",
-		"material-basic-secondary",
+		"material-colored-primary",
 		"material-container-secondary",
-		"material-inverted-secondary",
-
 
 		"material-colored-tertiary",
-		"material-basic-tertiary",
 		"material-container-tertiary",
 		"material-inverted-tertiary",
 
-		"material-inverted-primary",
 		"material-inverted-secondary",
-		"material-inverted-tertiary",
-
-		"material-container-secondary",
-		"material-container-tertiary",
 	];
 
 	constructor() { }
