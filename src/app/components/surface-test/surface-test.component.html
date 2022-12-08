@@ -1,11 +1,38 @@
 <div class="surfaces">
-	<section class="surfaces__surface-list">
-		<div class="surfaces__surface-group"  *ngFor="let surface of surfaces; index as i">
-			<article *ngFor="let surface of surfaces[i]" [ngClass]="'surfaces__surface surfaces__surface--' + surface">
-				<h1>Surface</h1>
-				<p>This is a surface test for my portfolio.</p>
-				<p><em>{{ surface }}</em></p>
-			</article>
+	<header class="surfaces__section-header">
+		<h1 class="surfaces__section-heading"><span class="surfaces__header-icon material-symbols-rounded">music_note</span> What's playing</h1>
+
+		<p class="surfaces__tagline">These are my current faves when it comes to the music I'm listening to. Press the shuffle button below to change the content.</p>
+	</header>
+	<button (click)="shuffleArray(surfaceContent)" class="surfaces__shuffle">
+		<div class="material-symbols-rounded">
+			shuffle
 		</div>
+		Shuffle content
+	</button>
+	<section class="surfaces__surface-list">
+		<article
+			*ngFor="let surface of surfaces; index as i"
+			[ngClass]="'surfaces__surface surfaces__surface--' + surface"
+			[class.surfaces__surface--large]="largeSurfaces.includes(surface)"
+			[class.surfaces__surface--wide]="wideSurfaces.includes(surface)"
+		>
+			<header class="surfaces__header">
+				<div class="surfaces__title-thumb material-symbols-rounded">
+					{{ shuffledArray[i].icon }}
+				</div>
+				<h2>{{ shuffledArray[i].heading }}</h2>
+				<p>{{ shuffledArray[i].subHeading }}</p>
+			</header>
+			<div class="surfaces__image-container">
+				<responsive-image
+					*ngIf="largeSurfaces.includes(surface) || wideSurfaces.includes(surface)"
+					[imageName]="shuffledArray[i].image"
+					class="surface__image"
+					[imageAlt]="shuffledArray[i].image + ' image'"
+					[class.surfaces__image--wide]="wideSurfaces.includes(surface)"
+				></responsive-image>
+			</div>
+		</article>
 	</section>
 </div>
