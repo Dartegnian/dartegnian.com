@@ -74,6 +74,7 @@
 		overflow: hidden;
 		padding: $full-container-padding;
 		overflow: visible;
+		gap: 2rem;
 
 		@include media-breakpoint-down(lg) {
 			flex-direction: column;

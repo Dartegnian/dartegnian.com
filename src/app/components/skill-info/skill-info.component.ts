@@ -7,16 +7,16 @@ import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 	styleUrls: ['./skill-info.component.scss']
 })
 export class SkillInfoComponent implements OnInit {
-	webAttributes = [
-		"focused",
-		"inspired",
-		"driven",
-		"oriented",
-		"impassioned"
+	mbtiAttributes = [
+		"Extraverted",
+		"iNtuitive",
+		"Feeling",
+		"Prospecting",
+		"Turbulent"
 	];
-	webAttributeIndex = 0;
-	webAttributeCharacter = 0;
-	webAttribute = this.webAttributes[this.webAttributeIndex];
+	mbtiAttributeIndex = 0;
+	mbtiAttributeCharacter = 0;
+	mbtiAttribute = this.mbtiAttributes[this.mbtiAttributeIndex];
 	cursorInterval: ReturnType<typeof setTimeout> | undefined;
 	isBrowser: boolean = false;
 
@@ -33,11 +33,11 @@ export class SkillInfoComponent implements OnInit {
 	}
 
 	writeType() {
-		const activeText = this.webAttributes[this.webAttributeIndex].substring(0, this.webAttributeCharacter + 1);
-		this.webAttribute = activeText;
-		this.webAttributeCharacter++;
+		const activeText = this.mbtiAttributes[this.mbtiAttributeIndex].substring(0, this.mbtiAttributeCharacter + 1);
+		this.mbtiAttribute = activeText;
+		this.mbtiAttributeCharacter++;
 
-		if (activeText === this.webAttributes[this.webAttributeIndex]) {
+		if (activeText === this.mbtiAttributes[this.mbtiAttributeIndex]) {
 
 			clearInterval(this.cursorInterval);
 			setTimeout(() => {
@@ -47,21 +47,21 @@ export class SkillInfoComponent implements OnInit {
 	}
 
 	deleteType() {
-		const activeText = this.webAttributes[this.webAttributeIndex].substring(0, this.webAttributeCharacter - 1);
-		this.webAttribute = activeText;
-		this.webAttributeCharacter--;
+		const activeText = this.mbtiAttributes[this.mbtiAttributeIndex].substring(0, this.mbtiAttributeCharacter - 1);
+		this.mbtiAttribute = activeText;
+		this.mbtiAttributeCharacter--;
 
 		if (activeText === "") {
 			clearInterval(this.cursorInterval);
 
-			if (this.webAttributeIndex === (this.webAttributes.length - 1)) {
-				this.webAttributeIndex = 0;
+			if (this.mbtiAttributeIndex === (this.mbtiAttributes.length - 1)) {
+				this.mbtiAttributeIndex = 0;
 			}
 			else {
-				this.webAttributeIndex++;
+				this.mbtiAttributeIndex++;
 			}
 
-			this.webAttributeCharacter = 0;
+			this.mbtiAttributeCharacter = 0;
 
 			setTimeout(() => {
 				this.cursorInterval = setInterval(() => this.writeType(), 100);

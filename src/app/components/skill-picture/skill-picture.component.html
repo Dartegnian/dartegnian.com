@@ -1,19 +1,60 @@
-<article class="skill-picture">
-	<section class="skill-picture__title">
-		<span class="skill-picture__title-span">
-			<span class="material-symbols-rounded skill-picture__title-icon">
-				badge
-			</span>
-			Web developer
-		</span>
-	</section>
-	<responsive-image
-		[imageName]="'pexels-tranmautritam-251225'"
-		class="skill-picture__photo"
-		[imageAlt]="'Skill picture stock image'"
-		[imageHeight]="432" [imageWidth]="768"
-	></responsive-image>
-	<section class="skill-picture__since">
-		<span>Since <h1 class="skill-picture__since-date">2019</h1></span>
+<article class="mbti-characteristic">
+	<section class="mbti-characteristic__characteristics">
+		<ng-container *ngTemplateOutlet="characteristics"></ng-container>
 	</section>
 </article>
+
+<ng-template #characteristics>
+	<div *ngFor="let char of mbtiCharacteristics" class="mbti-characteristic__characteristic">
+
+		<section class="mbti-characteristic__detail mbti-characteristic__detail--left mbti-characteristic__detail--desktop">
+			<ng-container *ngTemplateOutlet="leftCharacteristic; context: {char: char}"></ng-container>
+		</section>
+
+		<div class="mbti-characteristic__bar" [class.mbti-characteristic__bar--right]="char.direction === 'right'">
+			<div
+				class="mbti-characteristic__bar-filler"
+				[style.width.%]="char.percentage - 5"
+			></div>
+			<span class="material-symbols-rounded mbti-characteristic__icon">
+				{{ char.icon }}
+			</span>
+		</div>
+
+		<section class="mbti-characteristic__detail mbti-characteristic__detail--right mbti-characteristic__detail--desktop">
+			<ng-container *ngTemplateOutlet="rightCharacteristic; context: {char: char}"></ng-container>
+		</section>
+
+		<section class="mbti-characteristic__detail mbti-characteristic__detail--left mbti-characteristic__detail--mobile">
+			<div class="mbti-characteristic__detail-mobile">
+				<ng-container *ngTemplateOutlet="leftCharacteristic; context: {char: char}"></ng-container>
+				<ng-container *ngTemplateOutlet="rightCharacteristic; context: {char: char}"></ng-container>
+			</div>
+		</section>
+
+	</div>
+</ng-template>
+
+<ng-template #leftCharacteristic let-char="char">
+	<div class="mbti-characteristic__detail" [class.mbti-characteristic__detail--active]="char.direction === 'left'">
+		<span>
+			{{
+					char.direction === "left"
+					? char.percentage : (100 - char.percentage)
+			}}%
+		</span>
+		<span>{{ char.leftCharacteristic }}</span>
+	</div>
+</ng-template>
+
+<ng-template #rightCharacteristic let-char="char">
+	<div class="mbti-characteristic__detail mbti-characteristic__detail--right" [class.mbti-characteristic__detail--active]="char.direction === 'right'">
+		<span>
+			{{
+				char.direction === "right"
+					? char.percentage : (100 - char.percentage)
+			}}%
+		</span>
+		<span>{{ char.rightCharacteristic }}</span>
+	</div>
+</ng-template>
