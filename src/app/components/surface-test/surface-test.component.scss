@@ -3,6 +3,30 @@
 
 .surfaces {
 	display: flex;
+	flex-direction: column;
+
+	&__section-header {
+		@include material-colored--tertiary;
+		width: 100%;
+		border-radius: $container-border-radius;
+		padding: 4rem 2rem;
+	}
+
+	&__section-heading {
+		margin: 0;
+		margin-right: 1rem;
+		font-weight: bold;
+	}
+
+	&__tagline {
+		margin-bottom: 0rem;
+	}
+
+	&__shuffle {
+		margin: 2rem 0;
+		@include material-button--tonal-tertiary;
+		width: max-content;
+	}
 
 	&__surface-list {
 		display: grid;
@@ -10,7 +34,6 @@
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 		grid-auto-flow: row;
 		grid-gap: 1rem;
-		margin-bottom: 1rem;
 
 		@include media-breakpoint-down(lg) {
 			grid-auto-flow: row;
@@ -115,8 +138,8 @@
 		display: flex;
 		width: 100%;
 		height: 100%;
-		-webkit-mask: linear-gradient(to top, transparent 10%, #000);
-    	mask: linear-gradient(to top, transparent 10%, #000);position: absolute;
+		-webkit-mask: linear-gradient(to top, transparent 20%, #000);
+    	mask: linear-gradient(to top, transparent 20%, #000);position: absolute;
 		left: 0;
 		top: 0;
 		z-index: 0;
