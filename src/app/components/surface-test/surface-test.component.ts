@@ -53,7 +53,7 @@ export class SurfaceTestComponent implements OnInit {
 		},
 
 		{
-			image: "",
+			image: "owlcity",
 			icon: "spatial_audio_off",
 			heading: "Owl City",
 			subHeading: "Favorite single artist"
@@ -95,7 +95,7 @@ export class SurfaceTestComponent implements OnInit {
 		},
 
 		{
-			image: "",
+			image: "pexels-florian-g-7220729",
 			icon: "speed",
 			heading: "130+",
 			subHeading: "Preferred BPM"
