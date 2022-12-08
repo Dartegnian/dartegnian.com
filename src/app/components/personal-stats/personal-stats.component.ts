@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class PersonalStatsComponent implements OnInit {
 	stats = [
 		{
-			icon: "work",
-			heading: "DevOps Engineer",
-			subheading: "Job title",
-			link: "https://www.atlassian.com/devops/what-is-devops/devops-engineer"
+			icon: "flag",
+			heading: "Filipino",
+			subheading: "Nationality",
+			link: "https://en.wikipedia.org/wiki/Filipinos"
 		},
 		{
 			icon: "local_florist",
