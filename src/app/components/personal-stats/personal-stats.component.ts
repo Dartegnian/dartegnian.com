@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class PersonalStatsComponent implements OnInit {
 	stats = [
 		{
-			icon: "work",
-			heading: "DevOps Engineer",
-			subheading: "Job title",
-			link: "https://www.atlassian.com/devops/what-is-devops/devops-engineer"
+			icon: "flag",
+			heading: "Filipino",
+			subheading: "Nationality",
+			link: "https://en.wikipedia.org/wiki/Filipinos"
 		},
 		{
 			icon: "local_florist",
@@ -32,10 +32,28 @@ export class PersonalStatsComponent implements OnInit {
 			link: "https://en.wikipedia.org/wiki/Capricorn_(astrology)"
 		},
 	];
+	shuffledArray: any[];
 
-	constructor() { }
+	constructor() {
+		this.shuffledArray = this.shuffleArray(this.stats);
+	}
 
 	ngOnInit(): void {
 	}
 
+
+	shuffleArray(array: any[]) {
+		// Thank you, StackOverflow
+		// https://stackoverflow.com/questions/60787865/randomize-array-in-angular
+		let m = array.length, t, i;
+
+		while (m) {
+			i = Math.floor(Math.random() * m--);
+			t = array[m];
+			array[m] = array[i];
+			array[i] = t;
+		}
+
+		return array;
+	}
 }
