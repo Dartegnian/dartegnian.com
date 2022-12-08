@@ -32,6 +32,7 @@
 		@include material-container;
 		display: flex;
 		align-items: flex-end;
+		min-height: 10rem;
 
 		&--material-colored-primary {
 			@include material-colored--primary;

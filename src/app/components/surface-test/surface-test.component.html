@@ -1,15 +1,14 @@
 <div class="surfaces">
 	<section class="surfaces__surface-list">
 		<article
-			*ngFor="let surface of surfaces"
+			*ngFor="let surface of surfaces; index as i"
 			[ngClass]="'surfaces__surface surfaces__surface--' + surface"
 			[class.surfaces__surface--large]="largeSurfaces.includes(surface)"
 			[class.surfaces__surface--wide]="wideSurfaces.includes(surface)"
 		>
 			<header class="surfaces__header">
-				<h1>Surface</h1>
-				<p>This is a surface test for my portfolio.</p>
-				<p><em>{{ surface }}</em></p>
+				<h2>{{ surfaceContent[i].heading }}</h2>
+				<p>{{ surfaceContent[i].subHeading }}</p>
 			</header>
 		</article>
 	</section>
