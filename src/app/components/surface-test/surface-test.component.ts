@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./surface-test.component.scss']
 })
 export class SurfaceTestComponent implements OnInit {
-	surfaces: Array<String> = [
+	surfaces: Array<string> = [
 		"material-colored-secondary",
 		"material-container-primary",
 		"material-container-secondary",
@@ -20,6 +20,14 @@ export class SurfaceTestComponent implements OnInit {
 		"material-inverted-tertiary",
 
 		"material-inverted-secondary",
+	];
+	largeSurfaces: Array<string> = [
+		"material-colored-secondary",
+		"material-container-tertiary"
+	];
+	wideSurfaces = [
+		"material-inverted-primary",
+		"material-inverted-secondary"
 	];
 
 	constructor() { }
