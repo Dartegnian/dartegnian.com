@@ -8,17 +8,17 @@
 		>
 			<header class="surfaces__header">
 				<div class="surfaces__title-thumb material-symbols-rounded">
-					{{ surfaceContent[i].icon }}
+					{{ shuffledArray[i].icon }}
 				</div>
-				<h2>{{ surfaceContent[i].heading }}</h2>
-				<p>{{ surfaceContent[i].subHeading }}</p>
+				<h2>{{ shuffledArray[i].heading }}</h2>
+				<p>{{ shuffledArray[i].subHeading }}</p>
 			</header>
 			<div class="surfaces__image-container">
 				<responsive-image
 					*ngIf="largeSurfaces.includes(surface) || wideSurfaces.includes(surface)"
-					[imageName]="surfaceContent[i].image"
+					[imageName]="shuffledArray[i].image"
 					class="surface__image"
-					[imageAlt]="surfaceContent[i].image + ' image'"
+					[imageAlt]="shuffledArray[i].image + ' image'"
 					[class.surfaces__image--wide]="wideSurfaces.includes(surface)"
 				></responsive-image>
 			</div>

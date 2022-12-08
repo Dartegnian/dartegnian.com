@@ -39,14 +39,14 @@ export class SurfaceTestComponent implements OnInit {
 		},
 
 		{
-			image: "",
+			image: "favegenre",
 			icon: "graphic_eq",
 			heading: "Vocaloid",
 			subHeading: "Favorite genre at the moment"
 		},
 
 		{
-			image: "",
+			image: "girlsgeneration",
 			icon: "headphones",
 			heading: "Girls' Generation",
 			subHeading: "Favorite girl group"
@@ -60,21 +60,21 @@ export class SurfaceTestComponent implements OnInit {
 		},
 
 		{
-			image: "",
+			image: "favealbum",
 			icon: "library_music",
 			heading: "Girls & Peace by Girls' Generation",
 			subHeading: "Favorite album"
 		},
 
 		{
-			image: "",
+			image: "pexels-john-tekeridis-340103",
 			icon: "radio",
 			heading: "Spotify",
 			subHeading: "Streaming platform"
 		},
 
 		{
-			image: "",
+			image: "faveband",
 			icon: "speaker_group",
 			heading: "Paramore",
 			subHeading: "Favorite band"
@@ -88,7 +88,7 @@ export class SurfaceTestComponent implements OnInit {
 		},
 
 		{
-			image: "",
+			image: "favevocaloidalbum",
 			icon: "library_add",
 			heading: "IA/02 -COLOR-",
 			subHeading: "Favorite Vocaloid album"
@@ -101,10 +101,27 @@ export class SurfaceTestComponent implements OnInit {
 			subHeading: "Preferred BPM"
 		},
 	];
+	shuffledArray: any[];
 
-	constructor() { }
+	constructor() {
+		this.shuffledArray = this.shuffleArray(this.surfaceContent);
+	}
 
 	ngOnInit(): void {
 	}
 
+	shuffleArray(array: any[]) {
+		// Thank you, StackOverflow
+		// https://stackoverflow.com/questions/60787865/randomize-array-in-angular
+		let m = array.length, t, i;
+
+		while (m) {
+			i = Math.floor(Math.random() * m--);
+			t = array[m];
+			array[m] = array[i];
+			array[i] = t;
+		}
+
+		return array;
+	}
 }
