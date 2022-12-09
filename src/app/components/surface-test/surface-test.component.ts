@@ -124,7 +124,7 @@ export class SurfaceTestComponent implements OnInit {
 		},
 
 		{
-			image: "toptrack",
+			image: "toptrackyear",
 			icon: "repeat_one",
 			heading: "Coffee by Beabadobee",
 			subHeading: "Song of the year",
