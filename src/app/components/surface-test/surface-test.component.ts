@@ -101,7 +101,7 @@ export class SurfaceTestComponent implements OnInit {
 			icon: "discover_tune",
 			heading: "Luka Megurine",
 			subHeading: "Favorite Vocaloid",
-			linkText: "Listen on Youtube",
+			linkText: "Listen on YouTube",
 			link: "https://www.youtube.com/results?search_query=luka+megurine"
 		},
 

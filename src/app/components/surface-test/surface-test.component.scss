@@ -139,6 +139,10 @@
 		z-index: 1;
 	}
 
+	&__heading {
+		font-weight: bold;
+	}
+
 	&__image-container {
 		display: flex;
 		width: 100%;
