@@ -173,4 +173,10 @@
 		margin-bottom: 1rem;
 		margin-top: 2.5rem;
 	}
+
+	&__link {
+		@include material-button--basic-tertiary;
+		width: max-content;
+		margin-top: 2.5rem;
+	}
 }
