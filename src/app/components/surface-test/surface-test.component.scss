@@ -113,6 +113,11 @@
 
 		&--material-colored-tertiary {
 			@include material-colored--tertiary;
+			grid-column: span 4;
+
+			@include media-breakpoint-down(lg) {
+				grid-column: span 2;
+			}
 		}
 
 		&--material-basic-tertiary {

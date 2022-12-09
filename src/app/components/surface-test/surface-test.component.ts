@@ -12,10 +12,11 @@ export class SurfaceTestComponent implements OnInit {
 		"material-container-secondary",
 		"material-inverted-primary",
 
-		"material-colored-primary",
-		"material-container-secondary",
-
 		"material-colored-tertiary",
+
+		"material-container-secondary",
+		"material-colored-primary",
+		"material-container-primary",
 		"material-container-tertiary",
 		"material-inverted-tertiary",
 
@@ -27,7 +28,8 @@ export class SurfaceTestComponent implements OnInit {
 	];
 	wideSurfaces = [
 		"material-inverted-primary",
-		"material-inverted-secondary"
+		"material-inverted-secondary",
+		"material-colored-tertiary"
 	];
 
 	surfaceContent = [
@@ -119,6 +121,15 @@ export class SurfaceTestComponent implements OnInit {
 			subHeading: "Preferred BPM",
 			linkText: "More about it",
 			link: "https://open.spotify.com/album/3Z1xX2MHZYNvuCIJ7osBdn"
+		},
+
+		{
+			image: "toptrack",
+			icon: "repeat_one",
+			heading: "Coffee by Beabadobee",
+			subHeading: "Song of the year",
+			linkText: "Listen on Spotify",
+			link: "https://open.spotify.com/track/429NtPmr12aypzFH3FkN9l"
 		},
 	];
 	shuffledArray: any[];
