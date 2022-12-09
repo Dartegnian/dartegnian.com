@@ -21,8 +21,14 @@
 				<div class="surfaces__title-thumb material-symbols-rounded">
 					{{ shuffledArray[i].icon }}
 				</div>
-				<h2>{{ shuffledArray[i].heading }}</h2>
+				<h2 class="surfaces__heading">{{ shuffledArray[i].heading }}</h2>
 				<p>{{ shuffledArray[i].subHeading }}</p>
+				<a [href]="shuffledArray[i].link" target="_blank" class="surfaces__link">
+					<div class="material-symbols-rounded">
+						open_in_new
+					</div>
+					{{ shuffledArray[i].linkText }}
+				</a>
 			</header>
 			<div class="surfaces__image-container">
 				<responsive-image

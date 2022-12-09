@@ -113,6 +113,11 @@
 
 		&--material-colored-tertiary {
 			@include material-colored--tertiary;
+			grid-column: span 4;
+
+			@include media-breakpoint-down(lg) {
+				grid-column: span 2;
+			}
 		}
 
 		&--material-basic-tertiary {
@@ -132,6 +137,10 @@
 
 	&__header {
 		z-index: 1;
+	}
+
+	&__heading {
+		font-weight: bold;
 	}
 
 	&__image-container {
@@ -171,6 +180,12 @@
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 1rem;
+		margin-top: 2.5rem;
+	}
+
+	&__link {
+		@include material-button--basic-tertiary;
+		width: max-content;
 		margin-top: 2.5rem;
 	}
 }
