@@ -118,6 +118,11 @@
 			@include media-breakpoint-down(lg) {
 				grid-column: span 2;
 			}
+
+			@include media-breakpoint-down(md) {
+				grid-column: span 1;
+				grid-row: 1 / span 2;
+			}
 		}
 
 		&--material-basic-tertiary {
@@ -181,6 +186,10 @@
 		align-items: center;
 		margin-bottom: 1rem;
 		margin-top: 2.5rem;
+
+		@include media-breakpoint-down(md) {
+			margin-top: 4.5rem;
+		}
 	}
 
 	&__link {

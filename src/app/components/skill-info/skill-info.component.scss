@@ -58,6 +58,7 @@
 			padding: 1rem;
 			display: flex;
 			align-items: center;
+			width: max-content;
 		}
 
 		@include media-breakpoint-down(md) {

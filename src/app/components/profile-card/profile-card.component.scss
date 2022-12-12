@@ -66,6 +66,10 @@
 		display: flex;
 		z-index: 4;
 		margin-top: -12.5rem;
+
+		@include media-breakpoint-down(md) {
+			margin-top: -9rem;
+		}
 	}
 
 	&__profile-photo {
@@ -108,6 +112,10 @@
 		margin-top: 1.5rem;
 		margin-left: 1.5rem;
 		z-index: 4;
+
+		@include media-breakpoint-down(md) {
+			margin-left: 0rem;
+		}
 	}
 
 	&__text-bottom {
