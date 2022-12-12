@@ -78,6 +78,7 @@
 
 		@include media-breakpoint-down(lg) {
 			flex-direction: column;
+			padding: 0rem;
 		}
 
 		& > * {
