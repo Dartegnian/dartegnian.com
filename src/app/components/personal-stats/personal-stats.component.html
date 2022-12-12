@@ -1,0 +1,15 @@
+<article class="personal-stats">
+	<section *ngFor="let stat of shuffledArray" class="personal-stats__stat">
+		<div class="personal-stats__wrapper">
+			<span class="material-symbols-rounded personal-stats__icon">
+				{{ stat.icon }}
+			</span>
+			<span class="personal-stats__subheading">
+				{{ stat.subheading }}
+			</span>
+			<a class="personal-stats__heading" [href]="stat.link" target="_blank">
+				{{ stat.heading }}
+			</a>
+		</div>
+	</section>	
+</article>

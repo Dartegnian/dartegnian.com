@@ -9,11 +9,11 @@
 .profile-card {
 	@include material-colored--primary;
 
-	width: 20rem;
     overflow: hidden;
     display: flex;
 	flex-direction: column;
 	border-radius: $container-border-radius;
+	width: 100%;
 
 	@include media-breakpoint-down(md) {
 		width: 100%;
@@ -39,8 +39,9 @@
 	&__cover-container {
 		display: flex;
 		width: 100%;
-		margin-bottom: 4rem;
 		aspect-ratio: 16/9;
+		-webkit-mask: linear-gradient(to top, transparent 10%, #000);
+    	mask: linear-gradient(to top, transparent 10%, #000);
 	}
 
 	&__cover {
@@ -63,30 +64,23 @@
 
 	&__photo-container {
 		display: flex;
-		justify-content: center;
-		margin-top: -8rem;
-		// position: absolute;
-		// bottom: 0;
-		// left: 28%;
+		z-index: 4;
+		margin-top: -12.5rem;
 
-		// @include media-breakpoint-down(md) {
-		// 	bottom: -20%;
-		// 	left: auto;
-		// }
+		@include media-breakpoint-down(md) {
+			margin-top: -9rem;
+		}
 	}
 
 	&__profile-photo {
 		@include material-mask--jagged-circle;
-		width: 128px;
+		width: 150px;
 		padding: 0.5rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		justify-self: center;
-
-		// padding: 0.5rem;
-		// object-fit: contain;
-		// border-radius: 50%;
+		margin-left: 1.5rem;
 		background-color: #{var(--md-sys-color-secondary-container)};
 	}
 
@@ -100,20 +94,48 @@
 	&__text {
 		padding: $container-padding;
 		display: flex;
-		flex-direction: column;
 		text-align: center;
-		justify-content: center;
-		align-items: center;
+		justify-content: space-between;
+		align-items: space-between;
 		flex-grow: 1;
 	}
 
 	&__name {
-		font-size: 1.25rem;
+		@include material-basic--secondary;
+		border-radius: $container-border-radius;
+		padding: 1rem;
+		display: flex;
+		align-items: center;
+		font-size: 1.5rem;
 		font-weight: bold;
+		width: max-content;
+		margin-top: 1.5rem;
+		margin-left: 1.5rem;
+		z-index: 4;
+
+		@include media-breakpoint-down(md) {
+			margin-left: 0rem;
+		}
+	}
+
+	&__text-bottom {
+		display: flex;
 	}
 
 	&__tagline {
-		margin-bottom: 1.5rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	&__adjective {
+		@include material-chip;
+		@include material-basic--primary;
+	}
+
+	&__adjective-icon {
+		font-size: 1rem;
 	}
 
 	&__contact {

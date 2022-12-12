@@ -10,7 +10,25 @@ import { AccentService } from 'src/app/services/accent-service.service';
 })
 export class ProfileCardComponent implements OnInit {
 	name = "Dartegnian L. Velarde";
-	tagline = "Software engineer, web developer, Linux enthusiast, DevOps engineer";
+	adjectives: any[] = [
+		{
+			icon: "edit",
+			name: "Writer"
+		},
+		{
+			icon: "crisis_alert",
+			name: "Archer"
+		},
+		{
+			icon: "queue_music",
+			name: "Vocaloid fan"
+		},
+		{
+			icon: "terminal",
+			name: "DevOps engineer"
+		}
+	];
+	shuffledArray: any[];
 
 	images: Array<string>;
 	coverImage: string;
@@ -24,6 +42,7 @@ export class ProfileCardComponent implements OnInit {
 		private accent: AccentService,
 		@Inject(PLATFORM_ID) private platformId: Object
 	) {
+		this.shuffledArray = this.shuffleArray(this.adjectives);
 		this.images = this.accent.images;
 		this.coverImage = this.images[this.accent.activeIndex];
 		this.secondCoverImage = this.coverImage;
@@ -51,5 +70,20 @@ export class ProfileCardComponent implements OnInit {
 			this.coverImage = this.images[index];
 			this.isSecondCoverImageActive = false;
 		}
+	}
+	
+	shuffleArray(array: any[]) {
+		// Thank you, StackOverflow
+		// https://stackoverflow.com/questions/60787865/randomize-array-in-angular
+		let m = array.length, t, i;
+
+		while (m) {
+			i = Math.floor(Math.random() * m--);
+			t = array[m];
+			array[m] = array[i];
+			array[i] = t;
+		}
+
+		return array;
 	}
 }
