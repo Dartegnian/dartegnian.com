@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'surface-test',
+	selector: 'music-likes-info',
 	templateUrl: './surface-test.component.html',
 	styleUrls: ['./surface-test.component.scss']
 })
