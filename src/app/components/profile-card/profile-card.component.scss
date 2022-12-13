@@ -85,6 +85,10 @@
 		justify-self: center;
 		margin-left: 1.5rem;
 		background-color: #{var(--md-sys-color-secondary-container)};
+
+		@include media-breakpoint-down(lg) {
+			margin-left: 0rem;
+		}
 	}
 
 	&__photo {
