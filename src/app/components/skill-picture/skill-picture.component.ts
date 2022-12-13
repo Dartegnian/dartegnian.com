@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'skill-picture',
+	selector: 'mbti-characteristics',
 	templateUrl: './skill-picture.component.html',
 	styleUrls: ['./skill-picture.component.scss']
 })
