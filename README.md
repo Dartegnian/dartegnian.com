@@ -1,14 +1,14 @@
-![Portfolio website banner](src/assets/img/banner.jpg?raw=true "Material You portfolio banner")
+![Dartegnian.com website banner](src/assets/img/banner.jpg?raw=true "Material You landing banner")
 
-![Portfolio website screenshot standard theme](src/assets/img/screenshot1.png?raw=true "Material You portfolio site screenshot 1")
+![Dartegnian.com website screenshot standard theme](src/assets/img/screenshot1.png?raw=true "Material You landing page screenshot 1")
 
-![Portfolio website screenshot green theme](src/assets/img/screenshot2.png?raw=true "Material You portfolio site screenshot 2")
+![Dartegnian.com website screenshot green theme](src/assets/img/screenshot2.png?raw=true "Material You landing page screenshot 2")
 
-![Portfolio website screenshot dark purple theme](src/assets/img/screenshot3.png?raw=true "Material You portfolio site screenshot 3")
+![Dartegnian.com website screenshot dark purple theme](src/assets/img/screenshot3.png?raw=true "Material You landing page screenshot 3")
 
 # Dartegnian.com
 
-An interactive portfolio website with [Material You color](https://m3.material.io/) schemes.
+My interactive landing page with [Material You color](https://m3.material.io/) schemes.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 
