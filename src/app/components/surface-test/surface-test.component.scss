@@ -157,7 +157,7 @@
 		display: flex;
 		width: 100%;
 		flex-grow: 1;
-		justify-content: end;
+		justify-content: flex-end;
 
 		&--full {
 			width: 100%;
@@ -180,6 +180,16 @@
 			max-height: 8rem;
 			max-width: 8rem;
 			border-radius: $container-border-radius;
+
+			@include media-breakpoint-down(lg) {
+				max-height: 12rem;
+				max-width: 12rem;
+			}
+
+			@include media-breakpoint-down(md) {
+				max-height: 100%;
+				max-width: 100%;
+			}
 		}
 
 		&--large,
@@ -211,7 +221,7 @@
 		margin-top: 1.5rem;
 
 		@include media-breakpoint-down(md) {
-			margin-top: 4.5rem;
+			margin-top: 2.5rem;
 		}
 	}
 
