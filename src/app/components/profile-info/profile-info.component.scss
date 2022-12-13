@@ -3,7 +3,7 @@
 @import "material-you";
 
 :host {
-	flex-grow: 1;
+	// flex-grow: 1;
 	display: flex;
 	align-items: stretch;
 }
@@ -32,7 +32,7 @@
 
 	&__detail {
 		&:first-of-type {
-			margin-bottom: 2rem;
+			// margin-bottom: 2rem;
 		}
 	}
 

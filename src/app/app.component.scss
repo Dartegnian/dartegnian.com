@@ -80,6 +80,10 @@
 			flex-direction: column;
 		}
 
+		@include media-breakpoint-down(md) {
+			padding: 0rem;
+		}
+
 		& > * {
 			flex: 1;
 		}
