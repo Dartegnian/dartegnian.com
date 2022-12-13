@@ -14,6 +14,7 @@
 		<article
 			*ngFor="let surface of surfaces; index as i"
 			[ngClass]="'surfaces__surface surfaces__surface--' + surface"
+			[class.surfaces__surface--normal]="!wideSurfaces.includes(surface) && !largeSurfaces.includes(surface)"
 			[class.surfaces__surface--large]="largeSurfaces.includes(surface)"
 			[class.surfaces__surface--wide]="wideSurfaces.includes(surface)"
 		>
@@ -30,13 +31,17 @@
 					{{ shuffledArray[i].linkText }}
 				</a>
 			</header>
-			<div class="surfaces__image-container">
+			<div
+				class="surfaces__image-container"
+				[class.surfaces__image-container--full]="wideSurfaces.includes(surface) || largeSurfaces.includes(surface)"
+				[class.surfaces__image-container--normal]="!wideSurfaces.includes(surface) && !largeSurfaces.includes(surface)"
+			>
 				<responsive-image
-					*ngIf="largeSurfaces.includes(surface) || wideSurfaces.includes(surface)"
 					[imageName]="shuffledArray[i].image"
 					class="surface__image"
 					[imageAlt]="shuffledArray[i].image + ' image'"
 					[class.surfaces__image--wide]="wideSurfaces.includes(surface)"
+					[class.surfaces__image--normal]="!wideSurfaces.includes(surface) && !largeSurfaces.includes(surface)"
 				></responsive-image>
 			</div>
 		</article>
