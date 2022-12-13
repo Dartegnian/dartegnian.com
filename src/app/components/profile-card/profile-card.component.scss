@@ -45,6 +45,7 @@
     	mask: linear-gradient(to top, transparent 10%, #000);
 		position: absolute;
 		top: 0;
+		max-height: 100%;
 	}
 
 	&__cover {
