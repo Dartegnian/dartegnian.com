@@ -115,12 +115,12 @@ export class SurfaceTestComponent implements OnInit {
 		},
 
 		{
-			image: "pexels-florian-g-7220729",
+			image: "pexels-jerson-vargas-4765390",
 			icon: "speed",
 			heading: "130+",
 			subHeading: "Preferred BPM",
-			linkText: "More about it",
-			link: "https://open.spotify.com/album/3Z1xX2MHZYNvuCIJ7osBdn"
+			linkText: "My upbeat playlist",
+			link: "https://open.spotify.com/playlist/24hWaH3lri5CVXvTuzqqHX?si=1576583ba5ef4c0b"
 		},
 
 		{
