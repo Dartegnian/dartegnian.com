@@ -26,6 +26,10 @@ export class ProfileCardComponent implements OnInit {
 		{
 			icon: "terminal",
 			name: "DevOps engineer"
+		},
+		{
+			icon: "favorite",
+			name: "Victim of Love"
 		}
 	];
 	shuffledArray: any[];
