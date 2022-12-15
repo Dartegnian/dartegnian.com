@@ -1,0 +1,33 @@
+@import "node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "global";
+@import "material-you";
+
+.other-stats-picture {
+	display: flex;
+	z-index: 4;
+	margin-top: auto;
+	justify-content: center;
+
+	&__profile-photo {
+		@include material-mask--octagonal-circle;
+		width: 50%;
+		padding: 1.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		justify-self: center;
+		margin-left: 1.5rem;
+		background-color: #{var(--md-sys-color-on-secondary)};
+
+		@include media-breakpoint-down(lg) {
+			margin-left: 0rem;
+		}
+	}
+
+	&__photo {
+		@include material-mask--octagonal-circle;
+		user-select: none;
+		width: 100%;
+		aspect-ratio: 1/1;
+	}
+}
