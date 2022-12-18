@@ -27,6 +27,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/robots.txt",
+              "src/browserconfig.xml",
+              "src/sitemap.xml",
               "src/manifest.webmanifest"
             ],
             "styles": [
@@ -120,6 +122,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/robots.txt",
+              "src/browserconfig.xml",
+              "src/sitemap.xml",
               "src/manifest.webmanifest"
             ],
             "styles": [
