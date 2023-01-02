@@ -29,28 +29,28 @@ $gap: 0.25rem;
 		@include material-basic--secondary;
 
 		&--special {
-			background-color: yellow;
+			background-color: #{var(--calendar-special-color)};
 		}
 		&--excellent {
-			@include material-colored--primary;
+			background-color: #{var(--calendar-excellent-color)};
 		}
 		&--good {
-			@include material-colored--tertiary;
+			background-color: #{var(--calendar-good-color)};
 		}
 		&--above-average {
-			@include material-container--primary;
+			background-color: #{var(--calendar-above-average-color)};
 		}
 		&--average {
-			@include material-container--tertiary;
+			background-color: #{var(--calendar-average-color)};
 		}
 		&--below-average {
-			@include material-inverted--primary;
+			background-color: #{var(--calendar-below-average-color)};
 		}
 		&--bad {
-			@include material-inverted--secondary;
+			background-color: #{var(--calendar-bad-color)};
 		}
 		&--awful {
-			@include material-inverted--tertiary;
+			background-color: #{var(--calendar-awful-color)};
 		}
 
 		&--invalid {
