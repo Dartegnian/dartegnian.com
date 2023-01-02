@@ -6,7 +6,7 @@ interface IPixelMapDay {
 }
 
 // template
-// { status: "average" }
+// { status: "average" },
 // { status: "average", title: "aaaa" , icon: "aaaa", icon: "aaaa", reason: "aaaa" }
 
 export default IPixelMapDay;
