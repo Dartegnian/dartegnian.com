@@ -5,6 +5,21 @@
 $gap: 0.25rem;
 
 .pixel-map {
+	&__section-header {
+		padding: 2rem 0rem;
+		padding-top: 0rem;
+	}
+
+	&__section-heading {
+		margin: 0;
+		margin-right: 1rem;
+		font-weight: bold;
+	}
+
+	&__tagline {
+		margin-bottom: 0rem;
+	}
+
 	&__calendar {
 		display: grid;
 		gap: $gap;
