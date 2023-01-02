@@ -1,0 +1,142 @@
+@import "node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "global";
+@import "material-you";
+
+$gap: 0.25rem;
+
+.pixel-map {
+	&__section-header {
+		padding: 2rem 0rem;
+		padding-top: 0rem;
+	}
+
+	&__section-heading {
+		margin: 0;
+		margin-right: 1rem;
+		font-weight: bold;
+	}
+
+	&__header-icon {
+		font-size: 2rem;
+	}
+
+	&__tagline {
+		margin-bottom: 0rem;
+	}
+
+	&__legend {
+		margin-bottom: 3rem;
+	}
+
+	&__legend-header {
+		font-weight: bold;
+		@include material-inverted--tertiary;
+		border-radius: $container-border-radius;
+		padding: 1rem;
+		display: flex;
+		width: min-content;
+		margin-bottom: 1rem;
+	}
+
+	&__legend-items {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	&__legend-item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include material-basic--tertiary;
+		border-radius: $container-border-radius;
+		padding-left: 0rem;
+		overflow: hidden;
+		font-size: 0.9rem;
+	}
+
+	&__legend-text {
+		padding: 0.5rem 0.75rem;
+		font-weight: bold;
+
+		@include media-breakpoint-down(lg) {
+			padding: 0.25rem 0.5rem;
+		}
+	}
+
+	&__calendar-container {
+		overflow: auto;
+	}
+
+	&__calendar-area {
+		display: grid;
+		gap: $gap;
+		width: 100%;
+		min-width: max-content;
+	}
+
+	&__day-markers {
+		display: grid;
+		grid-template-columns: repeat(32, minmax(0, 1fr));
+	}
+	&__day-numbers {
+		display: flex;
+		justify-content: center;
+	}
+	&__day-months {
+		display: grid;
+		gap: $gap;
+		grid-template-columns: repeat(32, minmax(0, 1fr));
+	}
+
+	&__day-month-name {
+		position: sticky;
+		align-self: start;
+	}
+
+	&__day {
+		display: flex;
+		justify-content: center;
+		@include material-basic--tertiary;
+		font-weight: bold;
+
+		&--example {
+			height: 100%;
+			width: 2.5rem;
+			border-radius: 2rem;
+
+			@include media-breakpoint-down(lg) {
+				width: 2.5rem;
+			}
+		}
+
+		&--special {
+			background-color: #{var(--calendar-special-color)};
+		}
+		&--excellent {
+			background-color: #{var(--calendar-excellent-color)};
+		}
+		&--good {
+			background-color: #{var(--calendar-good-color)};
+		}
+		&--above-average {
+			background-color: #{var(--calendar-above-average-color)};
+		}
+		&--average {
+			background-color: #{var(--calendar-average-color)};
+		}
+		&--below-average {
+			background-color: #{var(--calendar-below-average-color)};
+		}
+		&--bad {
+			background-color: #{var(--calendar-bad-color)};
+		}
+		&--awful {
+			background-color: #{var(--calendar-awful-color)};
+		}
+
+		&--invalid {
+			opacity: 0.5;
+		}
+	}
+}

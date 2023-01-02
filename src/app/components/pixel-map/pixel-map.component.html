@@ -1,0 +1,41 @@
+<article class="pixel-map__calendar">
+	<header class="pixel-map__section-header">
+		<h1 class="pixel-map__section-heading"><span class="pixel-map__header-icon material-symbols-rounded">calendar_month</span> My 2023 Mood Calendar</h1>
+
+		<p class="pixel-map__tagline">A visual representation of how my days in 2023 have been so far.</p>
+	</header>
+
+	<section class="pixel-map__legend">
+		<h2 class="pixel-map__legend-header">Legend</h2>
+		<section class="pixel-map__legend-items">
+			<div *ngFor="let legend of legendData" class="pixel-map__legend-item">
+				<div [class]="'pixel-map__day pixel-map__day--example pixel-map__day--' + legend.class"></div>
+				<span class="pixel-map__legend-text">{{ legend.text }}</span>
+			</div>
+		</section>
+	</section>
+
+	<div class="pixel-map__calendar-container">
+		<div class="pixel-map__calendar-area">
+			<section class="pixel-map__day-markers">
+				<div></div>
+				<div *ngFor="let day of calendar.days" class="pixel-map__day-numbers">
+					{{ day + 1 }}
+				</div>
+			</section>
+		
+			<div *ngFor="let month of calendar.months; let m = index" class="pixel-map__day-months">
+				<div class="pixel-map__day-month-name">{{ month.shortName }}</div>
+				<ng-container *ngFor="let day of calendar.days; let d = index" >
+					<div
+						[class]="'pixel-map__day pixel-map__day--' + calendar.data?.[m]?.[d]?.status"
+						[class.pixel-map__day--invalid]="d+1 > month.days"
+					>
+						<span *ngIf="d+1 > month.days">X</span>
+					</div>
+				</ng-container>
+			</div>
+		</div>
+	</div>
+
+</article>

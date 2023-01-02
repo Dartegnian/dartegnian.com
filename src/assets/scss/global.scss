@@ -22,3 +22,48 @@ $theme-transition-speed: 0.25s;
 		background $theme-transition-speed ease,
 		color $theme-transition-speed ease;
 }
+
+.material-theme {
+	--calendar-special-color-light: #ffff00;
+	--calendar-excellent-color-light: #9d14ff;
+	--calendar-good-color-light: #0099ff;
+	--calendar-above-average-color-light: #17f083;
+	--calendar-average-color-light: #eae689;
+	--calendar-below-average-color-light: #faa721;
+	--calendar-bad-color-light: #ff301a;
+	--calendar-awful-color-light: #2e030e;
+
+
+	--calendar-special-color-dark: #bbc112;
+	--calendar-excellent-color-dark: #7f0db0;
+	--calendar-good-color-dark: #1c78b5;
+	--calendar-above-average-color-dark: #08a154;
+	--calendar-average-color-dark: #b2b253;
+	--calendar-below-average-color-dark: #a86f12;
+	--calendar-bad-color-dark: #a81c0d;
+	--calendar-awful-color-dark: #2e0510;
+}
+
+@media (prefers-color-scheme: light) {
+	.material-theme {
+		--calendar-special-color: var(--calendar-special-color-light);
+		--calendar-excellent-color: var(--calendar-excellent-color-light);
+		--calendar-good-color: var(--calendar-good-color-light);
+		--calendar-above-average-color: var(--calendar-above-average-color-light);
+		--calendar-average-color: var(--calendar-average-color-light);
+		--calendar-below-average-color: var(--calendar-below-average-color-light);
+		--calendar-bad-color: var(--calendar-bad-color-light);
+		--calendar-awful-color: var(--calendar-awful-color-light);
+	}
+
+	.dark-theme {
+		--calendar-special-color: var(--calendar-special-color-dark);
+		--calendar-excellent-color: var(--calendar-excellent-color-dark);
+		--calendar-good-color: var(--calendar-good-color-dark);
+		--calendar-above-average-color: var(--calendar-above-average-color-dark);
+		--calendar-average-color: var(--calendar-average-color-dark);
+		--calendar-below-average-color: var(--calendar-below-average-color-dark);
+		--calendar-bad-color: var(--calendar-bad-color-dark);
+		--calendar-awful-color: var(--calendar-awful-color-dark);
+	}
+}
