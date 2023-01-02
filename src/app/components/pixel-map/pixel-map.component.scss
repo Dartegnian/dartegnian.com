@@ -1,0 +1,60 @@
+@import "node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "global";
+@import "material-you";
+
+$gap: 0.25rem;
+
+.pixel-map {
+	&__calendar {
+		display: grid;
+		gap: $gap;
+	}
+	&__day-markers {
+		display: grid;
+		grid-template-columns: repeat(32, minmax(0, 1fr));
+	}
+	&__day-numbers {
+		display: flex;
+		justify-content: center;
+	}
+	&__day-months {
+		display: grid;
+		gap: $gap;
+		grid-template-columns: repeat(32, minmax(0, 1fr));
+	}
+
+	&__day {
+		display: flex;
+		justify-content: center;
+		@include material-basic--secondary;
+
+		&--special {
+			background-color: yellow;
+		}
+		&--excellent {
+			@include material-colored--primary;
+		}
+		&--good {
+			@include material-colored--tertiary;
+		}
+		&--above-average {
+			@include material-container--primary;
+		}
+		&--average {
+			@include material-container--tertiary;
+		}
+		&--below-average {
+			@include material-inverted--primary;
+		}
+		&--bad {
+			@include material-inverted--secondary;
+		}
+		&--awful {
+			@include material-inverted--tertiary;
+		}
+
+		&--invalid {
+			opacity: 0.5;
+		}
+	}
+}

@@ -23,6 +23,7 @@ import { ResponsiveImageComponent } from './components/responsive-image/responsi
 import { RouterModule } from '@angular/router';
 import { OtherSitesComponent } from './components/other-sites/other-sites.component';
 import { PersonalStatsComponent } from './components/personal-stats/personal-stats.component';
+import { PixelMapComponent } from './components/pixel-map/pixel-map.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { PersonalStatsComponent } from './components/personal-stats/personal-sta
     FooterComponent,
     ResponsiveImageComponent,
 	OtherSitesComponent,
-	PersonalStatsComponent
+	PersonalStatsComponent,
+ PixelMapComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
