@@ -19,6 +19,7 @@ export class PixelMapComponent {
 		this.legendData = [
 			{ class: "special", text: "Special" },
 			{ class: "excellent", text: "Excellent" },
+			{ class: "good", text: "Good" },
 			{ class: "above-average", text: "Above Average" },
 			{ class: "average", text: "Average" },
 			{ class: "below-average", text: "Below Average" },
