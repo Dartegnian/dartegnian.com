@@ -16,8 +16,46 @@ $gap: 0.25rem;
 		font-weight: bold;
 	}
 
+	&__header-icon {
+		font-size: 2rem;
+	}
+
 	&__tagline {
 		margin-bottom: 0rem;
+	}
+
+	&__legend {
+		margin-bottom: 3rem;
+	}
+
+	&__legend-header {
+		font-weight: bold;
+		@include material-inverted--tertiary;
+		border-radius: $container-border-radius;
+		padding: 1rem;
+		display: flex;
+		width: min-content;
+		margin-bottom: 1rem;
+	}
+
+	&__legend-items {
+		display: flex;
+		gap: 1rem;
+	}
+
+	&__legend-item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include material-basic--tertiary;
+		border-radius: $container-border-radius;
+		padding-left: 0rem;
+		overflow: hidden;
+	}
+
+	&__legend-text {
+		padding: 0.5rem 0.75rem;
+		font-weight: bold;
 	}
 
 	&__calendar {
@@ -41,7 +79,14 @@ $gap: 0.25rem;
 	&__day {
 		display: flex;
 		justify-content: center;
-		@include material-basic--secondary;
+		@include material-basic--tertiary;
+		font-weight: bold;
+
+		&--example {
+			height: 100%;
+			width: 2.5rem;
+			border-radius: 2rem;
+		}
 
 		&--special {
 			background-color: #{var(--calendar-special-color)};

@@ -8,6 +8,7 @@ import { calendarDays, calendarMonths } from '@data/pixel-map/pixel-map-calendar
 })
 export class PixelMapComponent {
 	calendar: any;
+	legendData: any;
 
 	constructor() {
 		this.calendar = {
@@ -15,6 +16,15 @@ export class PixelMapComponent {
 			months: calendarMonths,
 			data: calendarDays
 		};
+		this.legendData = [
+			{ class: "special", text: "Special" },
+			{ class: "excellent", text: "Excellent" },
+			{ class: "above-average", text: "Above Average" },
+			{ class: "average", text: "Average" },
+			{ class: "below-average", text: "Below Average" },
+			{ class: "bad", text: "Bad" },
+			{ class: "awful", text: "Awful" },
+		];
 		this.buildCalendar();
 	}
 
