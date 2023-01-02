@@ -40,6 +40,7 @@ $gap: 0.25rem;
 
 	&__legend-items {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 1rem;
 	}
 
@@ -51,17 +52,30 @@ $gap: 0.25rem;
 		border-radius: $container-border-radius;
 		padding-left: 0rem;
 		overflow: hidden;
+		font-size: 0.9rem;
 	}
 
 	&__legend-text {
 		padding: 0.5rem 0.75rem;
 		font-weight: bold;
+
+		@include media-breakpoint-down(lg) {
+			padding: 0.25rem 0.5rem;
+		}
 	}
 
-	&__calendar {
+	&__calendar-container {
+		overflow: scroll;contain: paint;
+	}
+
+	&__calendar-area {
 		display: grid;
 		gap: $gap;
+		width: 100%;
+		min-width: max-content;
+		contain: paint;
 	}
+
 	&__day-markers {
 		display: grid;
 		grid-template-columns: repeat(32, minmax(0, 1fr));
@@ -76,6 +90,11 @@ $gap: 0.25rem;
 		grid-template-columns: repeat(32, minmax(0, 1fr));
 	}
 
+	&__day-month-name {
+		position: sticky;
+		align-self: start;
+	}
+
 	&__day {
 		display: flex;
 		justify-content: center;
@@ -86,6 +105,10 @@ $gap: 0.25rem;
 			height: 100%;
 			width: 2.5rem;
 			border-radius: 2rem;
+
+			@include media-breakpoint-down(lg) {
+				width: 2.5rem;
+			}
 		}
 
 		&--special {
