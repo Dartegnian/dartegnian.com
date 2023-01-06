@@ -5,6 +5,7 @@ const januaryMap: Array<IPixelMapDay> = [
 	{ status: "above-average" },
   { status: "bad" },
   { status: "average" },
+  { status: "above-average" },
 ];
 
 export default januaryMap;
