@@ -9,6 +9,7 @@ const januaryMap: Array<IPixelMapDay> = [
   { status: "bad" },
   { status: "below-average" },
   { status: "excellent", title: "First Friends Outing Day", reason: "Gifted someone our anniversary gift. Watched movies with 1 group of friends, spent the evening with another group of friends. Said goodbye to my best friend and met their family again." },
+  { status: "above-average" },
 ];
 
 export default januaryMap;
