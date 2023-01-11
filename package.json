@@ -1,6 +1,6 @@
 {
   "name": "dartegnian-dot-com",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "scripts": {
     "ng": "ng",
     "start": "gulp compress && ng serve",
