@@ -11,6 +11,7 @@ import { IdbService } from '@services/idb.service';
 export class AppComponent implements OnInit {
 	title = "Dartegnian.com";
 	isBrowser: boolean = false;
+	isCalendarModalClosed: boolean = false;
 
 	constructor(
 		private idb: IdbService,
@@ -26,5 +27,9 @@ export class AppComponent implements OnInit {
 			const accentIndex = (await this.idb.getData("Material You", "themeIndex")) || 0;
 			this.accent.setAccent(accentIndex)
 		}
+	}
+
+	setIsModalOpen(isOpen: boolean) {
+		this.isCalendarModalClosed = isOpen;
 	}
 }
