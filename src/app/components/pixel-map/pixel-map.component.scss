@@ -100,6 +100,10 @@ $gap: 0.25rem;
 		top: 55%;
 		align-self: center;
 		overflow: hidden;
+
+		@include media-breakpoint-down(md) {
+			top: 52.5%;
+		}
 	}
 
 	&__modal-header-container {
@@ -176,6 +180,10 @@ $gap: 0.25rem;
 		width: max-content;
 		margin-left: auto;
 		margin-top: 2.5rem;
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+		}
 	}
 
 	&__spotify-icon {
