@@ -10,6 +10,7 @@ const januaryMap: Array<IPixelMapDay> = [
   { status: "below-average" },
   { status: "excellent", title: "First Friends Outing Day", reason: "Gifted someone our anniversary gift. Watched movies with 1 group of friends, spent the evening with another group of friends. Said goodbye to my best friend and met their family again." },
   { status: "above-average" },
+  { status: "excellent", title: "Anniversary", reason: "My 1st anniversary with someone! We had shared food the entire day: same breakfast and dinner. I opened up a lot of things with them and we looked back at our past." },
 ];
 
 export default januaryMap;
