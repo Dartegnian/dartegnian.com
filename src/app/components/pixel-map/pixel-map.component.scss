@@ -124,6 +124,10 @@ $gap: 0.25rem;
 	&__modal-close {
 		margin-left: auto;
 		cursor: pointer;
+
+		& > h2 {
+			font-weight: bold;
+		}
 	}
 
 	&__modal-overlay {
