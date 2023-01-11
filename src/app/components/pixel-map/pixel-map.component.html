@@ -1,4 +1,4 @@
-<article class="pixel-map__calendar">
+<article class="pixel-map__calendar" (click)="this.isModalOpen = false">
 	<header class="pixel-map__section-header">
 		<h1 class="pixel-map__section-heading"><span class="pixel-map__header-icon material-symbols-rounded">calendar_month</span> My 2023 Mood Calendar</h1>
 
@@ -15,8 +15,39 @@
 		</section>
 	</section>
 
+
+	<article
+		[class]="'pixel-map__modal ' + 'pixel-map__modal--' + activeData?.status"
+		*ngIf="isModalOpen"
+		(click)="$event.stopPropagation()"
+	>
+		<div class="pixel-map__modal-header-container">
+			<header
+				[class]="'pixel-map__modal-header ' + 'pixel-map__modal-header--' + activeData?.status"
+			>
+				<h3>{{ calendar.months[activeMonth]["shortName"] }}</h3>
+				<h3>{{ activeDate + 1 }}</h3>
+			</header>
+
+			<div
+				class="pixel-map__icon material-symbols-rounded"
+				[class]="'pixel-map__icon material-symbols-rounded ' + 'pixel-map__icon--' + activeData?.status"
+			>
+				<h2>{{ activeData?.icon ?? "calendar_month" }}</h2>
+			</div>
+			<div class="pixel-map__modal-close" (click)="this.isModalOpen = false">
+				<h2>X</h2>
+			</div>
+		</div>
+		<h2>{{ activeData?.title }}</h2>
+		<p class="pixel-map__modal-reason">{{ activeData?.reason ?? "Nothing noteworthy happened today lol" }}</p>
+	</article>
+
 	<div class="pixel-map__calendar-container">
-		<div class="pixel-map__calendar-area">
+		<div
+			class="pixel-map__calendar-area"
+			[class.pixel-map__calendar-area--inactive]="isModalOpen"
+		>
 			<section class="pixel-map__day-markers">
 				<div></div>
 				<div *ngFor="let day of calendar.days" class="pixel-map__day-numbers">
@@ -30,6 +61,7 @@
 					<div
 						[class]="'pixel-map__day pixel-map__day--' + calendar.data?.[m]?.[d]?.status"
 						[class.pixel-map__day--invalid]="d+1 > month.days"
+						(click)="setActiveDate(m, d, $event)"
 					>
 						<span *ngIf="d+1 > month.days">X</span>
 					</div>

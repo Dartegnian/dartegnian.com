@@ -5,6 +5,12 @@
 $gap: 0.25rem;
 
 .pixel-map {
+	&__calendar {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+	}
+
 	&__section-header {
 		padding: 2rem 0rem;
 		padding-top: 0rem;
@@ -30,9 +36,6 @@ $gap: 0.25rem;
 
 	&__legend-header {
 		font-weight: bold;
-		@include material-inverted--tertiary;
-		border-radius: $container-border-radius;
-		padding: 1rem;
 		display: flex;
 		width: min-content;
 		margin-bottom: 1rem;
@@ -73,6 +76,105 @@ $gap: 0.25rem;
 		gap: $gap;
 		width: 100%;
 		min-width: max-content;
+		transition:
+			opacity $theme-transition-speed ease,
+			filter $theme-transition-speed ease
+		;
+
+		&--inactive {
+			opacity: 0.5;
+			filter: blur(2px)
+		}
+	}
+
+	&__modal {
+		@include material-basic--tertiary;
+		display: flex;
+		flex-direction: column;
+		border-radius: $container-border-radius;
+		padding: $container-padding;
+		position: absolute;
+		z-index: 2;
+		box-shadow: $elevated-shadow;
+		width: 85%;
+		top: 55%;
+		align-self: center;
+	}
+
+	&__modal-header-container {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1.5rem;
+	}
+
+	&__modal-header {
+		border-radius: $container-border-radius;
+		padding: 1rem;
+		display: flex;
+		max-width: min-content;
+		gap: 0.5rem;
+		align-items: center;
+		margin-bottom: 0rem;
+
+		& > * {
+			margin-bottom: 0rem;
+		}
+	}
+
+	&__modal-close {
+		margin-left: auto;
+		cursor: pointer;
+	}
+
+	&__modal-overlay {
+		content: " ";
+		display: flex;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: black;
+		z-index: 1;
+		opacity: 0.5;
+		backdrop-filter: blur(10px);
+	}
+
+	&__modal,
+	&__icon {
+		&--special > h2 {
+			color: #{var(--calendar-special-color)};
+		}
+		&--excellent > h2 {
+			color: #{var(--calendar-excellent-color)};
+		}
+		&--good > h2 {
+			color: #{var(--calendar-good-color)};
+		}
+		&--above-average > h2 {
+			color: #{var(--calendar-above-average-color)};
+		}
+		&--average > h2 {
+			color: #{var(--calendar-average-color)};
+		}
+		&--below-average > h2 {
+			color: #{var(--calendar-below-average-color)};
+		}
+		&--bad > h2 {
+			color: #{var(--calendar-bad-color)};
+		}
+		&--awful > h2 {
+			color: #{var(--calendar-awful-color)};
+		}
+	}
+
+
+	&__icon > h2 {
+		font-size: 2rem;
+		padding: 1rem;
+		margin: 0rem;
+	}
+
+	&__modal-reason {
+		margin-bottom: 0rem;
 	}
 
 	&__day-markers {
@@ -110,6 +212,14 @@ $gap: 0.25rem;
 			}
 		}
 
+		&--invalid {
+			opacity: 0.5;
+		}
+	}
+
+	&__modal-header,
+	&__day {
+		color: #{var(--md-sys-color-on-primary)};
 		&--special {
 			background-color: #{var(--calendar-special-color)};
 		}
@@ -133,10 +243,6 @@ $gap: 0.25rem;
 		}
 		&--awful {
 			background-color: #{var(--calendar-awful-color)};
-		}
-
-		&--invalid {
-			opacity: 0.5;
 		}
 	}
 }
