@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { calendarDays, calendarMonths } from '@data/pixel-map/pixel-map-calendar';
 import IPixelMapDay from "@interfaces/pixel-map-day.interface";
 
@@ -15,6 +15,9 @@ export class PixelMapComponent {
 	activeDate: number;
 	isModalOpen: boolean;
 	activeData: IPixelMapDay | undefined;
+	
+	@Input() setModalCloseEvent = false;
+	@Output() setModalEvent = new EventEmitter<boolean>();
 
 	constructor() {
 		this.activeMonth = 0;
@@ -39,6 +42,18 @@ export class PixelMapComponent {
 		this.buildCalendar();
 	}
 
+	ngOnChanges(changes: SimpleChanges) {
+		for (const propName in changes) {
+			const chng = changes[propName];
+			const cur  = JSON.stringify(chng.currentValue);
+			const prev = JSON.stringify(chng.previousValue);
+			console.warn(cur, prev);
+			if (prev === "true" && cur === "false") {
+				this.isModalOpen = false;
+			}
+		}
+	}
+
 	buildCalendar() {
 		this.calendar.days = Array(31).fill(1).map((x, i) => i);
 	}
@@ -49,10 +64,15 @@ export class PixelMapComponent {
 		this.activeDate = date;
 
 		if (this.calendar.data?.[this.activeMonth]?.[this.activeDate]) {
-			this.isModalOpen = true;
+			this.setIsModalOpen(true);
 			this.activeData = this.calendar.data[month][date];
 		} else {
-			this.isModalOpen = false;
+			this.setIsModalOpen(false);
 		}
+	}
+
+	setIsModalOpen(isOpen: boolean) {
+		this.isModalOpen = isOpen;
+		this.setModalEvent.emit(isOpen);
 	}
 }

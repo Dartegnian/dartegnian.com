@@ -1,4 +1,4 @@
-<article class="pixel-map__calendar" (click)="this.isModalOpen = false">
+<article class="pixel-map__calendar" (click)="setIsModalOpen(false)">
 	<header class="pixel-map__section-header">
 		<h1 class="pixel-map__section-heading"><span class="pixel-map__header-icon material-symbols-rounded">calendar_month</span> My 2023 Mood Calendar</h1>
 
@@ -35,7 +35,7 @@
 			>
 				<h2>{{ activeData?.icon ?? "calendar_month" }}</h2>
 			</div>
-			<div class="pixel-map__modal-close" (click)="this.isModalOpen = false">
+			<div class="pixel-map__modal-close" (click)="setIsModalOpen(false)">
 				<h2>X</h2>
 			</div>
 		</div>
