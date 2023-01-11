@@ -99,6 +99,7 @@ $gap: 0.25rem;
 		width: 85%;
 		top: 55%;
 		align-self: center;
+		overflow: hidden;
 	}
 
 	&__modal-header-container {
@@ -170,6 +171,18 @@ $gap: 0.25rem;
 		}
 	}
 
+	&__modal-spotify {
+		@include material-button--tonal-tertiary;
+		width: max-content;
+		margin-left: auto;
+		margin-top: 2.5rem;
+	}
+
+	&__spotify-icon {
+		height: 1.5rem;
+		width: 1.5rem;
+		margin-right: 0.5rem;
+	}
 
 	&__icon > h2 {
 		font-size: 2rem;

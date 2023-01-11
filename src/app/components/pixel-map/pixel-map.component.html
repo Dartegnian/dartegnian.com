@@ -41,6 +41,17 @@
 		</div>
 		<h2>{{ activeData?.title }}</h2>
 		<p class="pixel-map__modal-reason">{{ activeData?.reason ?? "Nothing noteworthy happened today lol" }}</p>
+
+		<a
+			*ngIf="activeData?.spotify"
+			[href]="activeData?.spotify?.link"
+			target="_blank"
+			class="pixel-map__modal-spotify"
+		>
+			<i class="pixel-map__spotify-icon iconify" data-icon="mdi:spotify">
+			</i>
+			{{ activeData?.spotify?.artist }} - {{ activeData?.spotify?.song }}
+		</a>
 	</article>
 
 	<div class="pixel-map__calendar-container">

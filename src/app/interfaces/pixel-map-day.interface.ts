@@ -3,6 +3,11 @@ interface IPixelMapDay {
 	title?: string;
 	icon?: string;
 	reason?: string;
+	spotify?: {
+		artist: string;
+		song: string;
+		link: string;
+	}
 }
 
 // template

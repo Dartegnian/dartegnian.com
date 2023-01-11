@@ -47,7 +47,6 @@ export class PixelMapComponent {
 			const chng = changes[propName];
 			const cur  = JSON.stringify(chng.currentValue);
 			const prev = JSON.stringify(chng.previousValue);
-			console.warn(cur, prev);
 			if (prev === "true" && cur === "false") {
 				this.isModalOpen = false;
 			}
