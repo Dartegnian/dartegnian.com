@@ -53,8 +53,11 @@ const januaryMap: Array<IPixelMapDay> = [
 	}, {
 		status: "excellent",
 		icon: "heart_plus",
-		title: "Anniversary",
+		title: "4 Eyes and Eggs' Anniversary!",
 		reason: "My 1st anniversary with someone! We had shared food the entire day: same breakfast and dinner. I opened up a lot of things with them and we looked back at our past."
+	}, {
+		status: "average",
+		reason: "Got through so many hard tasks. Stressed out at writing SQL queries. Something felt off today but I can't explain what. Maybe it's because someone was mostly gone for the day. I watched Back to the Future, though."
 	},
 ];
 

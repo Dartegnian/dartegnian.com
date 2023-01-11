@@ -36,10 +36,10 @@
 				<h2>{{ activeData?.icon ?? "calendar_month" }}</h2>
 			</div>
 			<div class="pixel-map__modal-close" (click)="setIsModalOpen(false)">
-				<h2>X</h2>
+				<h2 class="pixel-map__modal-close-text">X</h2>
 			</div>
 		</div>
-		<h2>{{ activeData?.title }}</h2>
+		<h2 class="pixel-map__modal-header-text">{{ activeData?.title }}</h2>
 		<p class="pixel-map__modal-reason">{{ activeData?.reason ?? "Nothing noteworthy happened today lol" }}</p>
 
 		<a
