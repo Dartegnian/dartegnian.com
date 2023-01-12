@@ -13,8 +13,10 @@ export class PixelMapComponent {
 
 	activeMonth: number;
 	activeDate: number;
+	activeStatus: IPixelMapDay["status"] | undefined;
 	isModalOpen: boolean;
-	activeData: IPixelMapDay | undefined;
+	activeData: IPixelMapDay;
+	moodIcons: any;
 	
 	@Input() setModalCloseEvent = false;
 	@Output() setModalEvent = new EventEmitter<boolean>();
@@ -39,7 +41,18 @@ export class PixelMapComponent {
 			{ class: "bad", text: "Bad" },
 			{ class: "awful", text: "Awful" },
 		];
+		this.moodIcons = {
+			"special": "add_reaction",
+			"excellent": "sentiment_very_satisfied",
+			"good": "mood",
+			"above-average": "sentiment_satisfied",
+			"average": "sentiment_neutral",
+			"below-average": "sentiment_dissatisfied",
+			"bad": "sentiment_very_dissatisfied",
+			"awful": "sentiment_extremely_dissatisfied"
+		};
 		this.buildCalendar();
+		this.activeData = this.calendar.data?.[0]?.[0];
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
@@ -49,6 +62,7 @@ export class PixelMapComponent {
 			const prev = JSON.stringify(chng.previousValue);
 			if (prev === "true" && cur === "false") {
 				this.isModalOpen = false;
+				this.activeStatus = undefined;
 			}
 		}
 	}
@@ -65,6 +79,7 @@ export class PixelMapComponent {
 		if (this.calendar.data?.[this.activeMonth]?.[this.activeDate]) {
 			this.setIsModalOpen(true);
 			this.activeData = this.calendar.data[month][date];
+			this.activeStatus = this.activeData?.status;
 		} else {
 			this.setIsModalOpen(false);
 		}
@@ -73,5 +88,9 @@ export class PixelMapComponent {
 	setIsModalOpen(isOpen: boolean) {
 		this.isModalOpen = isOpen;
 		this.setModalEvent.emit(isOpen);
+
+		if (!isOpen) {
+			this.activeStatus = undefined;
+		}
 	}
 }

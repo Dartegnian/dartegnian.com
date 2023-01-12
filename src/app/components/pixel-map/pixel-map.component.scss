@@ -71,11 +71,8 @@ $gap: 0.25rem;
 		overflow: auto;
 	}
 
+	&__legend-item,
 	&__calendar-area {
-		display: grid;
-		gap: $gap;
-		width: 100%;
-		min-width: max-content;
 		transition:
 			opacity $theme-transition-speed ease,
 			filter $theme-transition-speed ease
@@ -85,6 +82,18 @@ $gap: 0.25rem;
 			opacity: 0.5;
 			filter: blur(2px)
 		}
+
+		&--normal {
+			opacity: 1;
+			filter: blur(0px)
+		}
+	}
+
+	&__calendar-area {
+		display: grid;
+		gap: $gap;
+		width: 100%;
+		min-width: max-content;
 	}
 
 	&__modal {
