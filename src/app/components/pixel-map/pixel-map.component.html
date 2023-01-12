@@ -8,7 +8,11 @@
 	<section class="pixel-map__legend">
 		<h2 class="pixel-map__legend-header">Legend</h2>
 		<section class="pixel-map__legend-items">
-			<div *ngFor="let legend of legendData" class="pixel-map__legend-item">
+			<div
+				*ngFor="let legend of legendData"
+				class="pixel-map__legend-item"
+				[class.pixel-map__legend-item--inactive]="activeStatus && activeStatus !== legend.class"
+			>
 				<div [class]="'pixel-map__day pixel-map__day--example pixel-map__day--' + legend.class"></div>
 				<span class="pixel-map__legend-text">{{ legend.text }}</span>
 			</div>

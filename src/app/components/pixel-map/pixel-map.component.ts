@@ -13,6 +13,7 @@ export class PixelMapComponent {
 
 	activeMonth: number;
 	activeDate: number;
+	activeStatus: IPixelMapDay["status"] | undefined;
 	isModalOpen: boolean;
 	activeData: IPixelMapDay | undefined;
 	
@@ -49,6 +50,7 @@ export class PixelMapComponent {
 			const prev = JSON.stringify(chng.previousValue);
 			if (prev === "true" && cur === "false") {
 				this.isModalOpen = false;
+				this.activeStatus = undefined;
 			}
 		}
 	}
@@ -65,6 +67,7 @@ export class PixelMapComponent {
 		if (this.calendar.data?.[this.activeMonth]?.[this.activeDate]) {
 			this.setIsModalOpen(true);
 			this.activeData = this.calendar.data[month][date];
+			this.activeStatus = this.activeData?.status;
 		} else {
 			this.setIsModalOpen(false);
 		}
@@ -73,5 +76,9 @@ export class PixelMapComponent {
 	setIsModalOpen(isOpen: boolean) {
 		this.isModalOpen = isOpen;
 		this.setModalEvent.emit(isOpen);
+
+		if (!isOpen) {
+			this.activeStatus = undefined;
+		}
 	}
 }
