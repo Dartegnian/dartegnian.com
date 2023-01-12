@@ -21,13 +21,13 @@
 
 
 	<article
-		[class]="'pixel-map__modal ' + 'pixel-map__modal--' + activeData?.status"
+		[class]="'pixel-map__modal ' + 'pixel-map__modal--' + activeData.status"
 		*ngIf="isModalOpen"
 		(click)="$event.stopPropagation()"
 	>
 		<div class="pixel-map__modal-header-container">
 			<header
-				[class]="'pixel-map__modal-header ' + 'pixel-map__modal-header--' + activeData?.status"
+				[class]="'pixel-map__modal-header ' + 'pixel-map__modal-header--' + activeData.status"
 			>
 				<h3>{{ calendar.months[activeMonth]["shortName"] }}</h3>
 				<h3>{{ activeDate + 1 }}</h3>
@@ -35,26 +35,26 @@
 
 			<div
 				class="pixel-map__icon material-symbols-rounded"
-				[class]="'pixel-map__icon material-symbols-rounded ' + 'pixel-map__icon--' + activeData?.status"
+				[class]="'pixel-map__icon material-symbols-rounded ' + 'pixel-map__icon--' + activeData.status"
 			>
-				<h2>{{ activeData?.icon ?? "calendar_month" }}</h2>
+				<h2>{{ activeData.icon ?? moodIcons[activeData.status] }}</h2>
 			</div>
 			<div class="pixel-map__modal-close" (click)="setIsModalOpen(false)">
 				<h2 class="pixel-map__modal-close-text">X</h2>
 			</div>
 		</div>
-		<h2 class="pixel-map__modal-header-text">{{ activeData?.title }}</h2>
-		<p class="pixel-map__modal-reason">{{ activeData?.reason ?? "Nothing noteworthy happened today lol" }}</p>
+		<h2 class="pixel-map__modal-header-text">{{ activeData.title }}</h2>
+		<p class="pixel-map__modal-reason">{{ activeData.reason ?? "Nothing noteworthy happened today lol" }}</p>
 
 		<a
-			*ngIf="activeData?.spotify"
-			[href]="activeData?.spotify?.link"
+			*ngIf="activeData.spotify"
+			[href]="activeData.spotify.link"
 			target="_blank"
 			class="pixel-map__modal-spotify"
 		>
 			<i class="pixel-map__spotify-icon iconify" data-icon="mdi:spotify">
 			</i>
-			{{ activeData?.spotify?.artist }} - {{ activeData?.spotify?.song }}
+			{{ activeData.spotify.artist }} - {{ activeData.spotify.song }}
 		</a>
 	</article>
 

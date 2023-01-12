@@ -15,7 +15,8 @@ export class PixelMapComponent {
 	activeDate: number;
 	activeStatus: IPixelMapDay["status"] | undefined;
 	isModalOpen: boolean;
-	activeData: IPixelMapDay | undefined;
+	activeData: IPixelMapDay;
+	moodIcons: any;
 	
 	@Input() setModalCloseEvent = false;
 	@Output() setModalEvent = new EventEmitter<boolean>();
@@ -40,7 +41,18 @@ export class PixelMapComponent {
 			{ class: "bad", text: "Bad" },
 			{ class: "awful", text: "Awful" },
 		];
+		this.moodIcons = {
+			"special": "add_reaction",
+			"excellent": "sentiment_very_satisfied",
+			"good": "mood",
+			"above-average": "sentiment_satisfied",
+			"average": "sentiment_neutral",
+			"below-average": "sentiment_dissatisfied",
+			"bad": "sentiment_very_dissatisfied",
+			"awful": "sentiment_extremely_dissatisfied"
+		};
 		this.buildCalendar();
+		this.activeData = this.calendar.data?.[0]?.[0];
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
